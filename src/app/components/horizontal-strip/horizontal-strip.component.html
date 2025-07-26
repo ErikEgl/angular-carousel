@@ -1,0 +1,25 @@
+<div class="horizontal-strip">
+  <div class="strip-header-container">
+    <h2 *ngIf="stripData.header" class="strip-header">{{ stripData.header }}</h2>
+    <a *ngIf="stripData.headerUrl"
+      [href]="stripData.headerUrl"
+      [attr.target]="stripData.headerUrl.startsWith('http') ? '_blank' : null">
+      Vaata kõiki
+    </a>
+  </div>
+  
+  <p-carousel 
+    [numVisible]="7.2"
+    [numScroll]="7"
+    [value]="stripData.data" 
+    [circular]="false"
+    [autoplayInterval]="0"
+    [showNavigators]="true"
+    [showIndicators]="false"
+    [responsiveOptions]="responsiveOptions"
+  >
+    <ng-template let-item pTemplate="item">
+      <app-content-item [itemData]="item"></app-content-item>
+    </ng-template>
+  </p-carousel>
+</div>

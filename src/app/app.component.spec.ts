@@ -1,10 +1,20 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { JupiterDataService } from './services/jupiter-data.service';
+import { of } from 'rxjs';
 
 describe('AppComponent', () => {
+  let mockDataService: jasmine.SpyObj<JupiterDataService>;
+
   beforeEach(async () => {
+    mockDataService = jasmine.createSpyObj('JupiterDataService', ['getFrontPageData']);
+    mockDataService.getFrontPageData.and.returnValue(of([]));
+
     await TestBed.configureTestingModule({
       imports: [AppComponent],
+      providers: [
+        { provide: JupiterDataService, useValue: mockDataService }
+      ]
     }).compileComponents();
   });
 
@@ -14,16 +24,4 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'jupiter-frontpage' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('jupiter-frontpage');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, jupiter-frontpage');
-  });
 });

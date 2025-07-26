@@ -1,0 +1,189 @@
+.horizontal-strip {
+
+  margin-bottom: 1.75rem;
+  position: relative;
+
+  .strip-header-container {
+    padding-left: 1.5rem;
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+
+    .strip-header {
+      font-size: calc(1.25rem + 0.00625 * (100vw - 320px));
+      line-height: 22px;
+      font-weight: 300;
+      color: white;
+    }
+
+    a {
+      font-size: calc(14px + 6 * (100vw - 320px) / 2560);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #c8c8c8;
+      text-decoration: none;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 44px;
+        height: 44px;
+        background-size: 44px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='44px' viewBox='0 -960 960 960' width='44px' fill='%23e3e3e3'%3E%3Cpath d='M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z'/%3E%3C/svg%3E");
+      }
+
+      &:hover {
+        color: white;
+        text-decoration: underline;
+
+        &::before {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='44px' viewBox='0 -960 960 960' width='44px' fill='%23ffffff'%3E%3Cpath d='M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z'/%3E%3C/svg%3E");
+        }
+      }
+    }
+  }
+
+  ::ng-deep .p-element {
+    --mat-sidenav-content-overflow-y: auto;
+    --timeline-margin-left: 1.5rem;
+    --timeline-card-margin: calc(0.3vw + 4px);
+    --timeline-button-width: 60px;
+    --standard-card-width: calc((100vw - var(--timeline-button-width) - var(--timeline-margin-left) - (var(--nr-of-items) * var(--timeline-card-margin))) / var(--nr-of-items));
+    --search-options-list: 200px;
+    --countdown-circle-radius: 0px;
+    --countdown-circle-stroke-dasharray: calc(2 * 3.14 * var(--countdown-circle-radius));
+    --maia-top-menu-height: 3rem;
+    --maia-sub-menu-height: 3.125rem;
+    --timeline-item-aspect-ratio: calc(2 / 3);
+
+    --carousel-arrow-bg-grad-start: rgba(32, 52, 67, .4);
+    --carousel-arrow-bg-grad-end: rgba(32, 52, 67, .8);
+    --carousel-arrow-bg-grad-start-hover: rgba(32, 52, 67, .6);
+    --carousel-arrow-bg-grad-end-hover: rgba(32, 52, 67, .9);
+
+    position: relative;
+
+    .play-btn:hover {
+      --play-btn-arrow-scale: .8
+    }
+
+    @media (max-width: 767.99px) {
+
+      --nr-of-items: 2;
+      --timeline-margin-left: 12px
+    }
+
+    @media (min-width: 768px) and (max-width: 959.99px) {
+
+      --nr-of-items: 3
+    }
+
+    @media (min-width: 960px) and (max-width: 1279.99px) {
+
+      --nr-of-items: 4 --nr-of-items: 3
+    }
+
+    @media (min-width: 1280px) and (max-width: 1439.99px) {
+
+      --nr-of-items: 4
+    }
+
+    @media (min-width: 1280px) and (max-width: 1919.99px) {
+
+      --nr-of-items: 6
+    }
+
+    @media (min-width: 1920px) {
+
+      --nr-of-items: 7
+    }
+
+    .p-carousel {
+      .p-carousel-content {
+
+
+        .p-carousel-container {
+
+          .p-carousel-items-content {
+            .p-carousel-items-container {
+              margin-left: 1.5rem;
+
+              .p-carousel-item {
+                .content-item {}
+              }
+            }
+          }
+
+          .p-carousel-prev {
+            border-radius: 0 50% 50%  0;
+            left: 0;
+            background:
+              url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Layer_1' x='0px' y='0px' viewBox='0 0 28 28' style='enable-background:new 0 0 28 28;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23FFFFFF;%7D .st1%7Bfill:%231F3918;%7D%0A%3C/style%3E%3Ccircle class='st0' cx='14' cy='14' r='14'/%3E%3Cg%3E%3Cpath class='st1' d='M14.1,8.3c0.8-0.8,2-0.8,2.8,0c0.8,0.8,0.8,2,0,2.8l-5.7,5.7L8.5,14L14.1,8.3z'/%3E%3Cpath class='st1' d='M16.9,16.8c0.8,0.8,0.8,2,0,2.8c-0.8,0.8-2,0.8-2.8,0L8.5,14l2.8-2.8L16.9,16.8z'/%3E%3C/g%3E%3Cdiv xmlns='' id='divScriptsUsed' style='display: none'/%3E%3Cscript xmlns='' id='globalVarsDetection' src='chrome-extension://cmkdbmfndkfgebldhnkbfhlneefdaaip/js/wrs_env.js'/%3E%3C/svg%3E") center / 50% no-repeat,
+              linear-gradient(to right, var(--carousel-arrow-bg-grad-start) 0%, var(--carousel-arrow-bg-grad-start) 15%, var(--carousel-arrow-bg-grad-end) 85%, var(--carousel-arrow-bg-grad-end) 100%) center / cover no-repeat;
+              &:hover {
+                background:
+                  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Layer_1' x='0px' y='0px' viewBox='0 0 28 28' style='enable-background:new 0 0 28 28;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23FFFFFF;%7D .st1%7Bfill:%231F3918;%7D%0A%3C/style%3E%3Ccircle class='st0' cx='14' cy='14' r='14'/%3E%3Cg%3E%3Cpath class='st1' d='M14.1,8.3c0.8-0.8,2-0.8,2.8,0c0.8,0.8,0.8,2,0,2.8l-5.7,5.7L8.5,14L14.1,8.3z'/%3E%3Cpath class='st1' d='M16.9,16.8c0.8,0.8,0.8,2,0,2.8c-0.8,0.8-2,0.8-2.8,0L8.5,14l2.8-2.8L16.9,16.8z'/%3E%3C/g%3E%3Cdiv xmlns='' id='divScriptsUsed' style='display: none'/%3E%3Cscript xmlns='' id='globalVarsDetection' src='chrome-extension://cmkdbmfndkfgebldhnkbfhlneefdaaip/js/wrs_env.js'/%3E%3C/svg%3E") center / 50% no-repeat,
+                  linear-gradient(to right,var(--carousel-arrow-bg-grad-end-hover) 0%,var(--carousel-arrow-bg-grad-end-hover) 15%,var(--carousel-arrow-bg-grad-start-hover) 85%,var(--carousel-arrow-bg-grad-start-hover) 100%) center / cover no-repeat;
+                
+              }
+            }
+
+          .p-carousel-next {
+            border-radius:  50% 0 0 50%;
+            right: 0;
+            background:
+              url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Layer_1' x='0px' y='0px' viewBox='0 0 28 28' style='enable-background:new 0 0 28 28;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23FFFFFF;%7D .st1%7Bfill:%231F3918;%7D%0A%3C/style%3E%3Ccircle class='st0' cx='14' cy='14' r='14'/%3E%3Cg%3E%3Cpath class='st1' d='M13.9,19.7c-0.8,0.8-2,0.8-2.8,0c-0.8-0.8-0.8-2,0-2.8l5.7-5.7l2.8,2.8L13.9,19.7z'/%3E%3Cpath class='st1' d='M11.1,11.2c-0.8-0.8-0.8-2,0-2.8c0.8-0.8,2-0.8,2.8,0l5.7,5.7l-2.8,2.8L11.1,11.2z'/%3E%3C/g%3E%3Cdiv xmlns='' id='divScriptsUsed' style='display: none'/%3E%3Cscript xmlns='' id='globalVarsDetection' src='chrome-extension://cmkdbmfndkfgebldhnkbfhlneefdaaip/js/wrs_env.js'/%3E%3C/svg%3E") center / 50% no-repeat,
+              linear-gradient(to right, var(--carousel-arrow-bg-grad-start) 0%, var(--carousel-arrow-bg-grad-start) 15%, var(--carousel-arrow-bg-grad-end) 85%, var(--carousel-arrow-bg-grad-end) 100%) center / cover no-repeat;
+              &:hover {
+                background:
+                  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Layer_1' x='0px' y='0px' viewBox='0 0 28 28' style='enable-background:new 0 0 28 28;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23FFFFFF;%7D .st1%7Bfill:%231F3918;%7D%0A%3C/style%3E%3Ccircle class='st0' cx='14' cy='14' r='14'/%3E%3Cg%3E%3Cpath class='st1' d='M13.9,19.7c-0.8,0.8-2,0.8-2.8,0c-0.8-0.8-0.8-2,0-2.8l5.7-5.7l2.8,2.8L13.9,19.7z'/%3E%3Cpath class='st1' d='M11.1,11.2c-0.8-0.8-0.8-2,0-2.8c0.8-0.8,2-0.8,2.8,0l5.7,5.7l-2.8,2.8L11.1,11.2z'/%3E%3C/g%3E%3Cdiv xmlns='' id='divScriptsUsed' style='display: none'/%3E%3Cscript xmlns='' id='globalVarsDetection' src='chrome-extension://cmkdbmfndkfgebldhnkbfhlneefdaaip/js/wrs_env.js'/%3E%3C/svg%3E") center / 50% no-repeat,
+                  linear-gradient(to right,var(--carousel-arrow-bg-grad-start-hover) 0%,var(--carousel-arrow-bg-grad-start-hover) 15%,var(--carousel-arrow-bg-grad-end-hover) 85%,var(--carousel-arrow-bg-grad-end-hover) 100%) center / cover no-repeat;
+                
+                }
+          }
+
+          .p-carousel-prev,
+          .p-carousel-next {
+            margin: 0;
+            z-index: 1;
+            position: absolute;
+
+            top: 0;
+            bottom: 0;
+            width: 3.75rem;
+            height: 100%;
+            color: white;
+            border: none;
+            transition: background-color 0.3s;
+            cursor: pointer;
+
+            svg {
+              display: none;
+            }
+
+            &:focus {
+              box-shadow: none;
+            }
+
+            &.p-disabled {
+              display: none;
+            }
+          }
+          @media (hover: none) and (pointer: coarse) {
+            .p-carousel-prev, 
+            .p-carousel-next {
+              display: none !important;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<div class="content-item">
+  <div class="item-image" *ngIf="getImageUrl()">
+    <div class="add-to-favorites">
+      <i class="material-icons">library_add</i>
+      <span class="expl-text">Lisa lemmikutesse</span>
+    </div>
+    <a [href]="itemData.canonicalUrl" *ngIf="itemData.canonicalUrl">
+      <img
+        [src]="getImageUrl()"
+        [srcset]="getSrcSet()"
+        [sizes]="sizes"
+        [alt]="itemData.heading"
+        loading="lazy"
+        decoding="async"
+      />
+    </a>
+    <img
+      *ngIf="!itemData.canonicalUrl"
+      [src]="getImageUrl()"
+      [srcset]="getSrcSet()"
+      [sizes]="sizes"
+      [alt]="itemData.heading"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+</div>
